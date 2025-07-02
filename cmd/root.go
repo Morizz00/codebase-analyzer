@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/Morizz00/codebase-analyzer/analyzer"
+	"github.com/Morizz00/codebase-analyzer/formatter"
 )
 
 func Execute() {
@@ -15,6 +16,6 @@ func Execute() {
 	}
 	stats := analyzer.Scan(targ)
 	for _, s := range stats {
-		fmt.Printf("%s (%s)--%d lines,%d bytes\n", s.Path, s.Language, s.Lines, s.Size)
+		formatter.PrintFileDeets(s.Path, s.Language, s.Lines, s.Size)
 	}
 }
