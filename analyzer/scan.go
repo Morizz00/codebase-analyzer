@@ -13,7 +13,7 @@ type FileStats struct {
 	Path     string
 	Language string
 	Lines    int
-	Size     int64
+	Size     int
 }
 
 func Scan(root string) []FileStats {
@@ -56,7 +56,7 @@ func Scan(root string) []FileStats {
 			Path:     path,
 			Language: lang,
 			Lines:    lines,
-			Size:     size,
+			Size:     int(size),
 		})
 		return nil
 	})
